@@ -1,8 +1,9 @@
 sort: sorting.o
 	cc sort.c -o bin/sort
 
-sorting.o: libs/sorting.c libs/sorting.h
-	cc -c libs/sorting.c
+sorting.o: sorting.h
+
 clean:
 	rm -rf bin
 	mkdir bin
+	rm *.o
