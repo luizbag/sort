@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include"sorting.h"
+#include"buble.h"
 
 void print_vector(int* v, int l);
 

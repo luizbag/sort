@@ -1,4 +1,4 @@
-#include"sorting.h"
+#include"buble.h"
 
 void buble_sort(int* v, int l) {
   int change = 1;

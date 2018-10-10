@@ -1,7 +1,9 @@
-sort: sorting.o
-	cc -o sort sort.c sorting.o
+objects = buble.o
 
-sorting.o: sorting.h
+sort: $(objects)
+	cc -o sort sort.c $(objects)
+
+buble.o: buble.h
 
 clean:
 	rm sort *.o
