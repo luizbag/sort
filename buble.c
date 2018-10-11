@@ -1,3 +1,4 @@
+// -*- coding: utf-8-unix; -*-
 #include"buble.h"
 
 void buble_sort(int* v, int l) {
