@@ -4,35 +4,32 @@
 #include"vector_util.h"
 
 void merge_sort(int* a, int l) {
-  int b[l];
-  clone_vector(a, b, l);
-  printf("merge sort\n");
-  print_vector(a, l);
-  print_vector(b, l);
-  split(b, 0, l, a);
+  split(a, l);
 }
 
-void split(int* b, int start, int end, int* a) {
-  printf("split\n");
-  printf("start: %i, end: %i\n", start, end);
-  if(end - start < 2)
-    return;
-  int middle = (end - start) / 2;
-  split(a, start, middle, b);
-  split(a, middle, end, b);
-  merge(b, start, middle, end, a);
+void split(int* a, int end) {
+  int start = 0;
+  if((end - start) >= 2) {
+    int mid = (end - start) / 2;
+    int left[mid - start];
+    int right[end - mid];
+    copy_vector(a, start, mid, left);
+    copy_vector(a, mid, end, right);
+    split(left, mid);
+    split(right, end-mid);
+    merge(left, right, end, a);
+  }
 }
 
-void merge(int* a, int start, int middle, int end, int* b) {
-  printf("merge\n");
-  printf("start: %i, middle: %i, end: %i\n", start, middle, end);
-  int i=start, j=middle;
-  for(int k = start; k < end; k++) {
-    if(i < middle && (j >= end || a[i] <= a[j])) {
-      b[k] = a[i];
+void merge(int* left, int* right, int end, int* a) {
+  int start=0, mid = (end - start) / 2;
+  int i=0, j=0;
+  for(int k = 0; k < end; k++) {
+    if(i < mid && (j >= end - mid || left[i] <= right[j])) {
+      a[k] = left[i];
       i++;
     } else {
-      b[k] = a[j];
+      a[k] = right[j];
       j++;
     }
   }

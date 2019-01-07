@@ -1,8 +1,8 @@
 #include<stdio.h>
 
 void copy_vector(int* s, int start, int end, int* d) {
-  for(int i=start; i<end; i++) {
-    d[i] = s[i];
+  for(int i=start, j=0; i<end; i++, j++) {
+    d[j] = s[i];
   }
 }
 
