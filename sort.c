@@ -1,9 +1,6 @@
 // -*- coding: utf-8-unix; -*-
 #include<stdio.h>
-#include"buble.h"
-#include"selection.h"
-#include"merge.h"
-#include"vector_util.h"
+#include"sorting.h"
 
 void print_vector(int* v, int l);
 
