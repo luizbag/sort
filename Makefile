@@ -1,7 +1,7 @@
 # -*- coding: utf-8-unix; -*-
 objects = sorting.o
 
-sort: $(objects)
+build: $(objects)
 	cc -o sort sort.c $(objects)
 
 debug: $(objects)

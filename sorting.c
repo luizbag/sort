@@ -8,7 +8,7 @@ void selection_sort(int* v, int l) {
     int menor=i;
     for(int j=i+1;j<l;j++) {
       if(v[menor]>v[j])
-    menor = j;
+	menor = j;
     }
     int aux = v[i];
     v[i] = v[menor];
@@ -23,10 +23,10 @@ void buble_sort(int* v, int l) {
     change=0;
     for(int i=0;i<l-1;i++) {
       if(v[i]>v[i+1]) {
-  int aux = v[i];
-  v[i] = v[i+1];
-  v[i+1] = aux;
-  change=1;
+	int aux = v[i];
+	v[i] = v[i+1];
+	v[i+1] = aux;
+	change=1;
       }
     }
   }
